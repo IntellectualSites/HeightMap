@@ -1,6 +1,6 @@
 # HeightMap
-quick mockup of heightmap selector:
-Demo: https://boy0001.github.io/HeightMap/
+Quick mockup of heightmap selector:
+Demo: https://intellectualsites.github.io/HeightMap/
 
 ### How to setup
  - Download or clone this repository
