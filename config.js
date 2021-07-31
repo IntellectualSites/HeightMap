@@ -114,9 +114,9 @@ var images = [
     "noiseHigh.png",
 ];
 // The low res images (they should all be the same size)
-var src_min = "https://github.com/boy0001/HeightMap/raw/gh-pages/images/_min/";
+var src_min = "https://raw.githubusercontent.com/IntellectualSites/HeightMap/main/images/_min/";
 // The max resolution images (Use the same if there are no higher resolution ones available)
-var src_max = "https://github.com/boy0001/HeightMap/raw/gh-pages/images/";
+var src_max = "https://raw.githubusercontent.com/IntellectualSites/HeightMap/main/images/";
 // The local source for the image (used in commands)
 var src_local = "file://";
 // Prevent image copy
