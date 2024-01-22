@@ -1,0 +1,8 @@
+<div class="text-white p-4 mx-0.5 my-0.5 rounded-md items-center justify-center flex flex-col hover:cursor-pointer hover:backdrop-blur-md hover:bg-white/30 hover:text-black" [ngClass]="isSelected()" (click)="selectImage()">
+  <img class="h-32 w-32 block rounded-md mb-1" [src]="getImageUrl()" alt="Nothing">
+  <div *ngIf="inFolder()" class="flex flex-row items-center justify-center mb-2">
+    <img class="h-8 w-8 mr-2" src="assets/icons/folder.png" alt="Nothing">
+    <h1>{{ getImageName() }}</h1>
+  </div>
+  <p *ngIf="!inFolder()" class="text-wrap w-32 text-center">{{getImageNameWithoutSlash()}}</p>
+</div>

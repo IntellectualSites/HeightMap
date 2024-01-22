@@ -1,0 +1,21 @@
+<header class="container mx-auto flex flex-col w-screen h-54 items-center justify-between p-6 rounded-md backdrop-blur-md	bg-white/10 ">
+  <h1 class="text-white text-center text-2xl mb-2">{{ environment.title }}</h1>
+  <div class="flex flex-row w-full items-center justify-between">
+    <img class="h-32 w-32 mr-4 block rounded-md backdrop-blur-lg	bg-white/10 " [src]="getImageUrl()" alt="Nothing">
+    <div class="flex flex-col w-full mr-8">
+      <div class="backdrop-blur-md bg-white/5 p-2 block rounded-md mb-2 pr-8">
+        <h2 class="text-white">Command</h2>
+        <input type="text" name="command" id="command" class="w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 ring-1 ring-inset ring-gray-300 sm:text-sm sm:leading-6 " readonly [value]="getCommand()" [cdkCopyToClipboard]="getCommand()" (cdkCopyToClipboardCopied)="showNotification = true">
+        <p class="text-white">Thats the template command</p>
+      </div>
+      <div class="backdrop-blur-md bg-white/5 p-2 block rounded-md pr-8">
+        <h2 class="text-white">Output</h2>
+        <input type="text" name="output" id="output" class="w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 ring-1 ring-inset ring-gray-300 sm:text-sm sm:leading-6" readonly [value]="getInGameCommand()" [cdkCopyToClipboard]="copyToClipboard()" (cdkCopyToClipboardCopied)="showNotification = true">
+        <p class="text-white text-sm">The command what you need ingame</p>
+      </div>
+      <div class="h-8 mt-2 block">
+        <h1 class="text-white" *ngIf="showNotification" @fade (@fade.done)="animationDone()">Copied to clipboard</h1>
+      </div>
+    </div>
+  </div>
+</header>
