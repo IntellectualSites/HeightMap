@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {ClipboardModule} from "@angular/cdk/clipboard";
 import { HeightMapImageComponent } from './components/height-map-image/height-map-image.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FaIconComponent, FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -13,11 +14,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HeaderComponent,
     HeightMapImageComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ClipboardModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        ClipboardModule,
+        FontAwesomeModule,
+        FaIconComponent,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

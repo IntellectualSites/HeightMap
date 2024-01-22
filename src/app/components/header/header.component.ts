@@ -2,7 +2,7 @@ import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {ImageService} from "../../services/ImageService/image.service";
 import {environment} from "../../../environments/environment";
 import {Subject} from "rxjs";
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-header',
@@ -17,13 +17,15 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
       transition('* => void', [
         animate('2s', style({ opacity: 0 }))
       ])
-    ])
+    ]),
   ]
 })
 export class HeaderComponent implements OnInit {
 
 
   image: string = 'Shape 3.png'
+  downloadState: number = 0;
+
   @Input()
   selectedImage: Subject<string> | undefined;
   showNotification: boolean = false;
@@ -52,6 +54,7 @@ export class HeaderComponent implements OnInit {
   }
 
   protected readonly environment = environment;
+  downloadLoop: boolean = false;
 
   animationDone() {
     this.showNotification = false;
@@ -59,5 +62,9 @@ export class HeaderComponent implements OnInit {
 
   copyToClipboard() : string{
     return this.getInGameCommand();
+  }
+
+  downloadZip() {
+    this.downloadState = 1;
   }
 }
