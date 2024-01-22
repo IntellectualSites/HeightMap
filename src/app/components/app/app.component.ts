@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {IMAGES} from "../../models/images";
 import {Subject} from "rxjs";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,6 @@ export class AppComponent {
   protected selectedImage: Subject<string> = new Subject<string>();
 
   getImages(): string[] {
-    return IMAGES;
+    return environment.IMAGES;
   }
 }
